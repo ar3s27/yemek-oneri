@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ yemek }} - Tarif</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{{ yemek }}</title>
+    <link rel="stylesheet" href="static/styles.css">
 </head>
 <body>
     <div class="container">
         <h1>{{ yemek }}</h1>
-        <img class="tarif-resim" src="{{ image }}" alt="{{ yemek }}">
+        <img src="{{ image }}" alt="{{ yemek }}">
         
-        <h2>Malzemeler:</h2>
+        <h3>Malzemeler:</h3>
         <ul>
             {% for malzeme in malzemeler %}
                 <li>{{ malzeme }}</li>
             {% endfor %}
         </ul>
 
-        <h2>Tarif Adımları:</h2>
+        <h3>Tarif Adımları:</h3>
         <ol>
             {% for adim in adimlar %}
                 <li>{{ adim }}</li>
             {% endfor %}
         </ol>
 
-        <a class="geri-buton" href="{{ url_for('index') }}">← Geri Dön</a>
+        <a href="{{ url_for('index') }}">Geri Dön</a>
     </div>
 </body>
 </html>
