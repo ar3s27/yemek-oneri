@@ -1,65 +1,121 @@
+/* Genel stil ayarları */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
 }
 
 .container {
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 0 auto;
     padding: 20px;
+    background-color: #fff;
 }
 
 h1, h3 {
     text-align: center;
+    color: #333;
 }
 
+/* Yemek kartları */
 .yemekler {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .yemek-kart {
-    width: 200px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
+    width: 250px;
+    border-radius: 8px;
     overflow: hidden;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .yemek-kart img {
     width: 100%;
-    height: 150px;
+    height: 180px;
     object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.yemek-kart:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .yemek-kart h3 {
     margin: 10px 0;
+    color: #555;
 }
 
-form input[type="text"] {
-    padding: 10px;
-    width: 200px;
-    margin-right: 10px;
-}
-
-form button {
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
+/* Tarif sayfası */
 ul, ol {
     padding-left: 20px;
 }
 
 a {
-    display: block;
+    display: inline-block;
     text-align: center;
     margin-top: 20px;
     text-decoration: none;
     color: #007bff;
+    font-weight: bold;
+}
+
+/* Yemek malzemeleri ve adımlar */
+ul li, ol li {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Form Alanı */
+form input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Tasarım */
+@media screen and (max-width: 768px) {
+    .yemekler {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .yemek-kart {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    form input[type="text"] {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+
+    form button {
+        width: 80%;
+    }
 }
