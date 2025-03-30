@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yemek Tarifleri</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🍽️ Malzemelerle Yapılabilecek Yemekler</h1>
+        <form method="post">
+            <label>Malzemeleri Gir (Virgülle Ayırın):</label>
+            <input type="text" name="malzemeler" placeholder="Örnek: süt, un, yumurta">
+            <button type="submit">Tarif Bul</button>
+        </form>
+
+        {% if yemekler %}
+            <h2>Önerilen Tarifler:</h2>
+            <div class="yemek-listesi">
+                {% for yemek in yemekler %}
+                    <div class="yemek-karti">
+                        <a href="{{ url_for('tarif', yemek_id=yemek.id) }}">
+                            <img src="{{ yemek.image }}" alt="{{ yemek.title }}">
+                            <h3>{{ yemek.title }}</h3>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
