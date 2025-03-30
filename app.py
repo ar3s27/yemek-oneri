@@ -17,7 +17,7 @@ def ingilizce_to_turkce(text):
 # API'den tarifleri çekme
 def tarif_bul(malzemeler):
     malzemeler_ing = turkce_to_ingilizce(malzemeler)
-    url = f"https://api.spoonacular.com/recipes/findByIngredients?ingredients={','.join(malzemeler_ing)}&number=8&apiKey={API_KEY}"
+    url = f"https://api.spoonacular.com/recipes/findByIngredients?ingredients={','.join(malzemeler_ing)}&number=8&cuisine=turkish&apiKey={API_KEY}"
     response = requests.get(url)
     return response.json() if response.status_code == 200 else []
 
@@ -60,5 +60,6 @@ def tarif(yemek_id):
         return render_template("tarif.html", yemek=yemek_adi_tr, malzemeler=malzemeler_listesi, adimlar=adimlar, image=detay["image"])
 
     return "Tarif bulunamadı!", 404
+
 if __name__ == "__main__":
     app.run(debug=True)
