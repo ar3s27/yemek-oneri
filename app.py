@@ -5,7 +5,7 @@ from deep_translator import GoogleTranslator
 app = Flask(__name__)
 app.secret_key = "supersecretkey"  # Session için gerekli (Gizli bir anahtar kullan)
 
-API_KEY = "cb9cd26f89414bb097a9888577511aae"
+API_KEY = "YOUR_API_KEY"
 
 # Çeviri Fonksiyonları
 def turkce_to_ingilizce(malzemeler):
