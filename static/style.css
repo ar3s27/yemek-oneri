@@ -152,3 +152,56 @@ form button:hover {
         margin-bottom: 5px;
     }
 }
+/* Tarif Sayfası Özel Stil */
+.tarif-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tarif-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.malzeme-listesi li,.adim-listesi li {
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 30px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.back-button:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+    .tarif-container {
+        padding: 15px;
+    }
+
+    .tarif-image {
+        max-height: 250px;
+    }
+
+    .malzeme-listesi li,
+    .adim-listesi li {
+        font-size: 16px;
+    }
+}
